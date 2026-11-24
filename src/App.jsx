@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import HeroBanner from './components/HeroBanner';
-import CategoryGrid from './components/CategoryGrid';
+import CategoryCircles from './components/CategoryCircles';
+import PromoBanners from './components/PromoBanners';
 import FeaturedProducts from './components/FeaturedProducts';
+import CategoryPageView from './components/CategoryPageView';
 import ComputerServicesSection from './components/ComputerServicesSection';
 import WhyChooseUs from './components/WhyChooseUs';
 import Footer from './components/Footer';
@@ -14,7 +16,7 @@ import CheckoutModal from './components/CheckoutModal';
 import { CheckCircle2 } from 'lucide-react';
 
 export default function App() {
-  // Cart state with localStorage backup
+  // Cart state with localStorage persistence
   const [cartItems, setCartItems] = useState(() => {
     try {
       const saved = localStorage.getItem('shree_cart');
@@ -22,7 +24,7 @@ export default function App() {
         {
           id: 'demo-card-1',
           productId: 'standard-card',
-          name: 'Standard Business Cards (Premium Matte 350 GSM)',
+          name: 'Standard Visiting Cards (Premium Matte 350 GSM)',
           quantity: 250,
           cartQty: 1,
           price: 449,
@@ -30,7 +32,7 @@ export default function App() {
           specs: {
             paper: '350 GSM Premium Matte',
             corners: 'Rounded Corners (6mm)',
-            companyName: 'Shree Computers Demo'
+            companyName: 'Shree Computers'
           }
         }
       ];
@@ -39,16 +41,16 @@ export default function App() {
     }
   });
 
-  // Navigation & Category filter state
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  
+  // Navigation State ('home' or department ID: 'visiting-cards', 'marketing-materials', 'signs-banners', etc.)
+  const [selectedDepartment, setSelectedDepartment] = useState('home');
+
   // Modals state
   const [isCustomizerOpen, setIsCustomizerOpen] = useState(false);
   const [isUploadOpen, setIsUploadOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [checkoutDetails, setCheckoutDetails] = useState(null);
-  
+
   // Floating Toast Notification
   const [toast, setToast] = useState(null);
 
@@ -106,12 +108,17 @@ export default function App() {
     showToast('Order received! Printing queue initiated.');
   };
 
+  const handleSelectDepartment = (deptId) => {
+    setSelectedDepartment(deptId);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 font-sans">
       
       {/* Toast Alert */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 bg-navy-950 text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 animate-slideUp">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#002f6c] text-white px-5 py-3 rounded-2xl shadow-2xl border border-slate-700 flex items-center gap-3 animate-slideUp">
           <div className="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
             <CheckCircle2 className="w-4 h-4" />
           </div>
@@ -119,65 +126,73 @@ export default function App() {
         </div>
       )}
 
-      {/* Main Navigation Header */}
+      {/* Vistaprint Signature Header & Mega Navigation */}
       <Navbar
         cartCount={cartItems.reduce((acc, item) => acc + (item.cartQty || 1), 0)}
         onOpenCart={() => setIsCartOpen(true)}
         onOpenUpload={() => setIsUploadOpen(true)}
         onOpenCustomizer={() => setIsCustomizerOpen(true)}
-        selectedCategory={selectedCategory}
-        onSelectCategory={(catId) => {
-          setSelectedCategory(catId);
-          window.scrollTo({ top: 400, behavior: 'smooth' });
-        }}
+        selectedDepartment={selectedDepartment}
+        onSelectDepartment={handleSelectDepartment}
         onSelectProduct={(product) => setSelectedProduct(product)}
       />
 
-      {/* Hero Carousel Banner */}
-      <HeroBanner
-        onSelectCategory={(catId) => {
-          setSelectedCategory(catId);
-          window.scrollTo({ top: 600, behavior: 'smooth' });
-        }}
-        onOpenCustomizer={() => setIsCustomizerOpen(true)}
-      />
+      {/* Main Content Area: Home or Department Subpage */}
+      {selectedDepartment === 'home' ? (
+        <>
+          {/* 1. Hero Carousel */}
+          <HeroBanner
+            onSelectDepartment={handleSelectDepartment}
+            onOpenCustomizer={() => setIsCustomizerOpen(true)}
+          />
 
-      {/* Categories Department Grid */}
-      <CategoryGrid
-        onSelectCategory={(catId) => {
-          setSelectedCategory(catId);
-          window.scrollTo({ top: 800, behavior: 'smooth' });
-        }}
-      />
+          {/* 2. Vistaprint Signature Circular Category Grid */}
+          <CategoryCircles
+            onSelectDepartment={handleSelectDepartment}
+          />
 
-      {/* Featured Products & Services */}
-      <FeaturedProducts
-        selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-        onSelectProduct={(product) => setSelectedProduct(product)}
-        onOpenCustomizer={() => setIsCustomizerOpen(true)}
-        onAddToCart={handleAddToCart}
-      />
+          {/* 3. Vistaprint 3-Up Campaign Promotional Tiles */}
+          <PromoBanners
+            onSelectDepartment={handleSelectDepartment}
+            onOpenCustomizer={() => setIsCustomizerOpen(true)}
+          />
 
-      {/* Shree Computers Tech & Repair Division */}
-      <ComputerServicesSection
-        onAddToCart={handleAddToCart}
-      />
+          {/* 4. Best Sellers Products Grid */}
+          <FeaturedProducts
+            selectedCategory="all"
+            onSelectCategory={handleSelectDepartment}
+            onSelectProduct={(product) => setSelectedProduct(product)}
+            onOpenCustomizer={() => setIsCustomizerOpen(true)}
+            onAddToCart={handleAddToCart}
+          />
 
-      {/* Vistaprint-Style Guarantee & Customer Reviews */}
-      <WhyChooseUs />
+          {/* 5. Shree Technical Workshop Section */}
+          <ComputerServicesSection
+            onAddToCart={handleAddToCart}
+          />
 
-      {/* Comprehensive Footer */}
+          {/* 6. The Vistaprint & Shree Promise + Customer Reviews */}
+          <WhyChooseUs />
+        </>
+      ) : (
+        /* Dedicated Department Page View */
+        <CategoryPageView
+          departmentId={selectedDepartment}
+          onBackToHome={() => handleSelectDepartment('home')}
+          onSelectProduct={(product) => setSelectedProduct(product)}
+          onOpenCustomizer={() => setIsCustomizerOpen(true)}
+          onAddToCart={handleAddToCart}
+        />
+      )}
+
+      {/* Vistaprint 5-Column Footer */}
       <Footer
-        onSelectCategory={(catId) => {
-          setSelectedCategory(catId);
-          window.scrollTo({ top: 600, behavior: 'smooth' });
-        }}
+        onSelectCategory={handleSelectDepartment}
         onOpenCustomizer={() => setIsCustomizerOpen(true)}
         onOpenUpload={() => setIsUploadOpen(true)}
       />
 
-      {/* Modals */}
+      {/* Modals & Studios */}
       <LiveCardCustomizer
         isOpen={isCustomizerOpen}
         onClose={() => setIsCustomizerOpen(false)}

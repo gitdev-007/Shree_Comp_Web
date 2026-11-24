@@ -1,73 +1,195 @@
-export const CATEGORIES = [
+export const DEPARTMENTS = [
   {
-    id: 'business-cards',
-    name: 'Business Cards',
-    icon: 'CreditCard',
-    description: 'Leave an unforgettable impression with premium finishes, textures and custom shapes.',
-    badge: 'Popular',
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&q=80'
+    id: 'visiting-cards',
+    name: 'Visiting Cards',
+    slug: 'visiting-cards',
+    title: 'Custom Visiting Cards & Business Cards',
+    description: 'Create unforgettable first impressions with premium card stocks, rich finishes, and metallic foil accents.',
+    heroImage: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Standard Visiting Cards',
+      'Rounded Corner Cards',
+      'Metallic Gold & Silver Foil Cards',
+      'Velvet Soft-Touch Touch Cards',
+      'NFC Smart Digital Cards',
+      'Square & Slim Visiting Cards',
+      'Transparent Plastic Cards'
+    ]
   },
   {
-    id: 'marketing',
+    id: 'marketing-materials',
     name: 'Marketing Materials',
-    icon: 'Layers',
-    description: 'Flyers, brochures, menus & presentation folders designed to grow your business.',
-    badge: 'High Value',
-    image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=600&q=80'
+    slug: 'marketing-materials',
+    title: 'Flyers, Brochures & Print Marketing',
+    description: 'Engage customers and drive local sales with high-definition printed pamphlets, tri-fold brochures, and presentation folders.',
+    heroImage: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Flyers & Pamphlets (A4, A5)',
+      'Folded Brochures (Bi-Fold, Tri-Fold)',
+      'Presentation Folders & Files',
+      'Company Letterheads',
+      'Envelopes & Notepads',
+      'Restaurant Menus & Table Tents'
+    ]
   },
   {
     id: 'signs-banners',
-    name: 'Signs & Banners',
-    icon: 'Flag',
-    description: 'Roll-up standees, waterproof vinyl flex, acrylic glow boards and exhibition displays.',
-    badge: 'Fast Dispatch',
-    image: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=600&q=80'
+    name: 'Signs, Banners & Posters',
+    slug: 'signs-banners',
+    title: 'Trade Show Standees, Banners & Signage',
+    description: 'Capture attention everywhere with retractable aluminum roll-up standees, weatherproof vinyl flex, and acrylic LED signboards.',
+    heroImage: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Roll-Up Retractable Standees',
+      'Outdoor Vinyl Flex Banners',
+      'Acrylic Glow Signboards',
+      'Sunpack & Foam Board Signs',
+      'Canvas Prints & Wall Frames',
+      'Canopy Tents & Promo Tables'
+    ]
+  },
+  {
+    id: 'clothing-bags',
+    name: 'Clothing & Bags',
+    slug: 'clothing-bags',
+    title: 'Custom Branded Apparel & Corporate Wear',
+    description: 'Dress your team in premium 240 GSM cotton polo shirts, custom screen-printed tees, caps, and durable canvas tote bags.',
+    heroImage: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Embroidered Polo T-Shirts',
+      'Direct-to-Film (DTF) Round Neck T-Shirts',
+      'Corporate Winter Hoodies & Jackets',
+      'Custom Embroidered Caps',
+      'Canvas Tote Bags & Drawstrings',
+      'Industrial Safety Vests & Aprons'
+    ]
   },
   {
     id: 'promotional-gifts',
-    name: 'Promotional Gifts & Merch',
-    icon: 'Gift',
-    description: 'Custom ceramic mugs, corporate polo tees, engraved metal pens & customized keychains.',
-    badge: 'Trending',
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80'
+    name: 'Promotional Gifts',
+    slug: 'promotional-gifts',
+    title: 'Personalized Mugs, Pens & Corporate Giveaways',
+    description: 'Delight clients and staff with customized ceramic mugs, executive metal pens, satin lanyards, and custom keychains.',
+    heroImage: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Custom Ceramic Coffee Mugs',
+      'Laser Engraved Metal Pens',
+      'Satin Employee Lanyards & ID Cards',
+      'Stainless Steel Water Bottles',
+      'Custom Acrylic Keychains',
+      'Personalized Desk Mousepads'
+    ]
   },
   {
     id: 'stickers-packaging',
-    name: 'Stickers & Packaging',
-    icon: 'Tag',
-    description: 'Waterproof die-cut stickers, product labels, courier boxes & custom rubber stamps.',
-    badge: 'Best Seller',
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80'
+    name: 'Labels & Packaging',
+    slug: 'stickers-packaging',
+    title: 'Custom Product Labels, Stickers & Mailer Boxes',
+    description: 'Elevate your product packaging with waterproof vinyl die-cut stickers, sheet labels, custom courier boxes, and rubber stamps.',
+    heroImage: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Die-Cut Waterproof Vinyl Stickers',
+      'Sheet Labels & Return Address Labels',
+      'Custom Kraft Paper Carry Bags',
+      'Corrugated Mailer & Shipping Boxes',
+      'Self-Inking Custom Rubber Stamps',
+      'Security Hologram Seals'
+    ]
   },
   {
-    id: 'it-services',
+    id: 'computer-services',
     name: 'Computer & IT Services',
-    icon: 'Monitor',
-    description: 'Laptop/Desktop repair, printer cartridge refilling, Xerox, thesis binding & software setup.',
-    badge: 'Local Special',
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80'
+    slug: 'computer-services',
+    title: 'Shree Computers Tech Diagnostics & Printing Hub',
+    description: 'Complete IT technical solutions: Same-day laptop motherboard repair, 15-min laser toner refills, SSD upgrades, and thesis binding.',
+    heroImage: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=1200&q=80',
+    subcategories: [
+      'Laptop & Desktop Chip-Level Repair',
+      '15-Minute Laser Toner Cartridge Refill',
+      'High-Speed SSD & RAM Cloning Upgrades',
+      'University Hardbound Thesis Binding',
+      'Bulk Color Xerox & Digital Scanning',
+      'Annual Maintenance Contracts (AMC)'
+    ]
+  }
+];
+
+export const VISTAPRINT_CIRCLE_CATEGORIES = [
+  {
+    id: 'visiting-cards',
+    name: 'Visiting Cards',
+    price: 'From ₹199',
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=300&q=80',
+    badge: 'Popular'
+  },
+  {
+    id: 'marketing-materials',
+    name: 'Flyers & Leaflets',
+    price: 'From ₹399',
+    image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=300&q=80'
+  },
+  {
+    id: 'signs-banners',
+    name: 'Roll-Up Standees',
+    price: 'From ₹899',
+    image: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=300&q=80',
+    badge: 'Fast 24H'
+  },
+  {
+    id: 'clothing-bags',
+    name: 'Polo T-Shirts',
+    price: 'From ₹399',
+    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80'
+  },
+  {
+    id: 'promotional-gifts',
+    name: 'Custom Mugs',
+    price: 'From ₹179',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80',
+    badge: 'Best Gift'
+  },
+  {
+    id: 'stickers-packaging',
+    name: 'Labels & Stickers',
+    price: 'From ₹249',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=300&q=80'
+  },
+  {
+    id: 'computer-services',
+    name: 'Laptop Repairs',
+    price: 'Diagnostic FREE',
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=300&q=80',
+    badge: 'Tech Hub'
+  },
+  {
+    id: 'computer-services',
+    name: 'Thesis Binding',
+    price: 'From ₹249',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=300&q=80'
   }
 ];
 
 export const PRODUCTS = [
+  // VISITING CARDS
   {
     id: 'standard-card',
-    name: 'Standard Business Cards',
-    category: 'business-cards',
-    tagline: 'The essential card for every networking opportunity',
+    name: 'Standard Visiting Cards',
+    category: 'visiting-cards',
+    subcategory: 'Standard Visiting Cards',
+    tagline: 'Traditional 350 GSM card stock with matte or high-gloss protective finish',
     rating: 4.9,
-    reviewsCount: 382,
+    reviewsCount: 1420,
     startingPrice: 199,
     startingQty: 100,
     turnaround: '24-48 Hours',
     image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Top Seller', 'Value Pack'],
+    badges: ['Bestseller', 'Top Value'],
     features: [
-      'Heavy 350 GSM Art Card paper stock',
-      'Matte or Glossy laminate finish',
+      'Heavy 350 GSM European Art Card',
+      'Matte or High-Gloss protective laminate',
       'Standard 89mm x 51mm dimensions',
-      'Crisp high-definition offset printing'
+      'Razor-sharp 2400 DPI Konica Minolta offset printing'
     ],
     paperOptions: [
       { id: 'matte-350', name: 'Premium Matte (350 GSM)', priceAdd: 0 },
@@ -87,17 +209,18 @@ export const PRODUCTS = [
   },
   {
     id: 'gold-foil-card',
-    name: 'Metallic Gold Foil Visiting Cards',
-    category: 'business-cards',
-    tagline: 'Elevate your brand with shimmering raised foil accents',
+    name: 'Raised Gold Foil Visiting Cards',
+    category: 'visiting-cards',
+    subcategory: 'Metallic Gold & Silver Foil Cards',
+    tagline: 'Shimmering metallic gold leaf hot stamped on soft-touch velvet cardstock',
     rating: 5.0,
-    reviewsCount: 154,
+    reviewsCount: 489,
     startingPrice: 499,
     startingQty: 100,
     turnaround: '2-3 Days',
     image: 'https://images.unsplash.com/photo-1596524430615-b46475ddff6e?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Luxury Finish', 'Editor Choice'],
+    badges: ['Luxury Choice', 'Foil Stamped'],
     features: [
       '400 GSM Ultra-thick luxury card stock',
       'Genuine metallic Gold or Silver hot foil stamping',
@@ -121,17 +244,18 @@ export const PRODUCTS = [
   },
   {
     id: 'nfc-smart-card',
-    name: 'NFC Smart Digital Business Card',
-    category: 'business-cards',
-    tagline: 'Tap to instantly share phone, socials, website & payment UPI',
+    name: 'NFC Smart Digital Tap Card',
+    category: 'visiting-cards',
+    subcategory: 'NFC Smart Digital Cards',
+    tagline: 'Tap card on any smartphone to transfer contact, website, and UPI instantly',
     rating: 4.8,
-    reviewsCount: 96,
+    reviewsCount: 312,
     startingPrice: 599,
     startingQty: 1,
     turnaround: 'Same Day Ready',
     image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['High Tech', 'Eco-Friendly'],
+    badges: ['Smart NFC', 'No App Needed'],
     features: [
       'Waterproof durable matte PVC card with embedded NTAG216 chip',
       'No app required - works with all iPhone & Android smartphones',
@@ -144,19 +268,22 @@ export const PRODUCTS = [
       { qty: 5, price: 2199, originalPrice: 3999, popular: false }
     ]
   },
+
+  // MARKETING MATERIALS
   {
     id: 'business-flyers',
-    name: 'Marketing Flyers & Pamphlets',
-    category: 'marketing',
-    tagline: 'High impact promotional flyers for door-to-door & retail promotions',
+    name: 'Marketing Flyers & Leaflets',
+    category: 'marketing-materials',
+    subcategory: 'Flyers & Pamphlets (A4, A5)',
+    tagline: 'Vibrant full-color promotional flyers in A4 & A5 sizes for local outreach',
     rating: 4.9,
-    reviewsCount: 245,
+    reviewsCount: 890,
     startingPrice: 399,
     startingQty: 250,
     turnaround: '24 Hours',
     image: 'https://images.unsplash.com/photo-1607344645866-009c320c5ab8?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Best Value', 'Fast Turnaround'],
+    badges: ['High Impact', 'Same Day'],
     features: [
       '130 GSM Gloss / 170 GSM Premium Art Paper',
       'Available in A4, A5, and Newspaper Insert sizes',
@@ -178,10 +305,11 @@ export const PRODUCTS = [
   {
     id: 'folded-brochure',
     name: 'Tri-Fold & Bi-Fold Company Brochures',
-    category: 'marketing',
-    tagline: 'Organize your product catalogue & services into an executive brochure',
-    rating: 4.7,
-    reviewsCount: 188,
+    category: 'marketing-materials',
+    subcategory: 'Folded Brochures (Bi-Fold, Tri-Fold)',
+    tagline: 'Executive multi-panel brochures scored and folded without ink cracking',
+    rating: 4.8,
+    reviewsCount: 420,
     startingPrice: 799,
     startingQty: 100,
     turnaround: '2-3 Days',
@@ -200,29 +328,27 @@ export const PRODUCTS = [
       { qty: 500, price: 2499, originalPrice: 3900, popular: false }
     ]
   },
+
+  // SIGNS & BANNERS
   {
     id: 'rollup-standee',
     name: 'Retractable Roll-Up Standee',
     category: 'signs-banners',
-    tagline: 'Portable exhibition banner stand ready in 30 seconds',
+    subcategory: 'Roll-Up Retractable Standees',
+    tagline: 'Lightweight anodized aluminum banner stand for expos, conferences & retail',
     rating: 5.0,
-    reviewsCount: 310,
+    reviewsCount: 1150,
     startingPrice: 899,
     startingQty: 1,
-    turnaround: 'Same Day Dispatch',
+    turnaround: '24-Hour Express',
     image: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Event Favorite', 'Ready to Deploy'],
+    badges: ['Bestseller', 'Carry Bag Included'],
     features: [
       'Heavy-duty anodized aluminum base with stabilizing twist-out feet',
       'High-grade Star Flex banner material (Tear & curl resistant)',
       'High resolution 1440 DPI Japanese inkjet print',
       'Includes complimentary padded nylon travel carry bag'
-    ],
-    sizes: [
-      { id: '2x5', name: '2 ft x 5 ft (Compact)', priceAdd: 0 },
-      { id: '2.5x6', name: '2.5 ft x 6 ft (Standard Popular)', priceAdd: 200 },
-      { id: '3x6', name: '3 ft x 6 ft (Large Expo)', priceAdd: 400 }
     ],
     quantityTiers: [
       { qty: 1, price: 899, originalPrice: 1299, popular: true },
@@ -232,17 +358,18 @@ export const PRODUCTS = [
   },
   {
     id: 'outdoor-vinyl-banner',
-    name: 'Weatherproof Outdoor Vinyl Banner',
+    name: 'Weatherproof Outdoor Vinyl Flex Banner',
     category: 'signs-banners',
-    tagline: 'Heavy-duty waterproof flex banner with brass grommets',
+    subcategory: 'Outdoor Vinyl Flex Banners',
+    tagline: 'Heavy 380 GSM frontlit vinyl banner with rust-free brass eyelets every 2 feet',
     rating: 4.8,
-    reviewsCount: 142,
+    reviewsCount: 530,
     startingPrice: 349,
     startingQty: 1,
-    turnaround: '24 Hours',
+    turnaround: 'Same Day',
     image: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Outdoor Grade', 'UV Resistant'],
+    badges: ['Weatherproof', 'UV Resistant'],
     features: [
       'Heavy 380 GSM frontlit vinyl banner media',
       'UV-resistant solvent inks that do not fade in harsh sunlight',
@@ -255,50 +382,22 @@ export const PRODUCTS = [
       { qty: 4, price: 1199, originalPrice: 1800, popular: false }
     ]
   },
-  {
-    id: 'custom-ceramic-mug',
-    name: 'Personalized Ceramic Coffee Mug',
-    category: 'promotional-gifts',
-    tagline: 'Custom photo or logo printed mugs for gifts and corporate branding',
-    rating: 4.9,
-    reviewsCount: 412,
-    startingPrice: 179,
-    startingQty: 1,
-    turnaround: 'Same Day',
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
-    isCustomizable: true,
-    badges: ['Gifting Favorite', 'Dishwasher Safe'],
-    features: [
-      'Grade-A 330ml glazed white ceramic mug',
-      'Sublimation thermal print with vivid photographic colors',
-      '100% Microwave and dishwasher safe',
-      'Individual protective white gift box included'
-    ],
-    variants: [
-      { id: 'white', name: 'Classic White Ceramic', priceAdd: 0 },
-      { id: 'magic', name: 'Magic Heat-Sensitive Mug (Reveals with hot drink)', priceAdd: 120 },
-      { id: 'dual-tone', name: 'Dual-Tone Inside Color Mug', priceAdd: 50 }
-    ],
-    quantityTiers: [
-      { qty: 1, price: 179, originalPrice: 299, popular: false },
-      { qty: 5, price: 799, originalPrice: 1350, popular: true },
-      { qty: 20, price: 2799, originalPrice: 4800, popular: false },
-      { qty: 50, price: 5999, originalPrice: 11000, popular: false }
-    ]
-  },
+
+  // CLOTHING & BAGS
   {
     id: 'corporate-polo-tshirt',
-    name: 'Custom Embroidered / Printed Polo T-Shirt',
-    category: 'promotional-gifts',
-    tagline: 'Premium 240 GSM breathable cotton polo for corporate teams',
-    rating: 4.8,
-    reviewsCount: 194,
+    name: 'Custom Embroidered Cotton Polo T-Shirt',
+    category: 'clothing-bags',
+    subcategory: 'Embroidered Polo T-Shirts',
+    tagline: 'Premium 240 GSM breathable combed cotton with high-density chest embroidery',
+    rating: 4.9,
+    reviewsCount: 670,
     startingPrice: 399,
     startingQty: 1,
     turnaround: '2-4 Days',
     image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Premium Fabric', 'Team Wear'],
+    badges: ['100% Cotton', 'Corporate Standard'],
     features: [
       '100% Combed ring-spun cotton (240 GSM bio-washed)',
       'Durable ribbed collar and cuffs with 2-button placket',
@@ -311,19 +410,50 @@ export const PRODUCTS = [
       { qty: 25, price: 7999, originalPrice: 13500, popular: false }
     ]
   },
+
+  // PROMOTIONAL GIFTS
+  {
+    id: 'custom-ceramic-mug',
+    name: 'Personalized Ceramic Coffee Mug',
+    category: 'promotional-gifts',
+    subcategory: 'Custom Ceramic Coffee Mugs',
+    tagline: 'Dishwasher & microwave safe 330ml glazed mug with vivid photo reproduction',
+    rating: 4.9,
+    reviewsCount: 1890,
+    startingPrice: 179,
+    startingQty: 1,
+    turnaround: 'Same Day',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    isCustomizable: true,
+    badges: ['Gift Favorite', 'Box Included'],
+    features: [
+      'Grade-A 330ml glazed white ceramic mug',
+      'Sublimation thermal print with vivid photographic colors',
+      '100% Microwave and dishwasher safe',
+      'Individual protective white gift box included'
+    ],
+    quantityTiers: [
+      { qty: 1, price: 179, originalPrice: 299, popular: false },
+      { qty: 5, price: 799, originalPrice: 1350, popular: true },
+      { qty: 20, price: 2799, originalPrice: 4800, popular: false }
+    ]
+  },
+
+  // LABELS & PACKAGING
   {
     id: 'custom-stickers-roll',
     name: 'Die-Cut Waterproof Vinyl Stickers',
     category: 'stickers-packaging',
-    tagline: 'Custom shapes and sizes for product branding and packaging',
+    subcategory: 'Die-Cut Waterproof Vinyl Stickers',
+    tagline: 'Laser precision contour cut stickers with UV and scratch protection',
     rating: 4.9,
-    reviewsCount: 228,
+    reviewsCount: 760,
     startingPrice: 249,
     startingQty: 50,
     turnaround: '24-48 Hours',
     image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
     isCustomizable: true,
-    badges: ['Waterproof', 'Custom Die-Cut'],
+    badges: ['Waterproof', 'Contour Cut'],
     features: [
       'Thick waterproof vinyl with strong permanent adhesive',
       'Precision laser contour cutting to any shape',
@@ -333,23 +463,25 @@ export const PRODUCTS = [
     quantityTiers: [
       { qty: 50, price: 249, originalPrice: 399, popular: false },
       { qty: 100, price: 399, originalPrice: 650, popular: true },
-      { qty: 250, price: 799, originalPrice: 1350, popular: false },
-      { qty: 500, price: 1399, originalPrice: 2400, popular: false }
+      { qty: 250, price: 799, originalPrice: 1350, popular: false }
     ]
   },
+
+  // COMPUTER & IT SERVICES
   {
     id: 'laptop-desktop-repair',
-    name: 'Laptop & Desktop Repair Service',
-    category: 'it-services',
-    tagline: 'Expert chip-level hardware repair, screen replacement & speed upgrades',
+    name: 'Laptop & Desktop Hardware Repair',
+    category: 'computer-services',
+    subcategory: 'Laptop & Desktop Chip-Level Repair',
+    tagline: 'Expert chip-level motherboard repair, screen replacement & speed upgrades',
     rating: 5.0,
-    reviewsCount: 520,
+    reviewsCount: 1240,
     startingPrice: 299,
     startingQty: 1,
-    turnaround: 'Same Day Diagnostic',
+    turnaround: 'Same Day Diagnostics',
     image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80',
     isCustomizable: false,
-    badges: ['Free Diagnostics', 'Certified Techs'],
+    badges: ['Free Diagnostics', '30-Day Warranty'],
     features: [
       'Free hardware diagnostic inspection and cost estimate',
       'SSD installation & RAM upgrades (10x faster boot times)',
@@ -364,13 +496,14 @@ export const PRODUCTS = [
   {
     id: 'printer-cartridge-refill',
     name: 'Laser Printer Toner Cartridge Refill',
-    category: 'it-services',
+    category: 'computer-services',
+    subcategory: '15-Minute Laser Toner Cartridge Refill',
     tagline: 'Express 15-minute refill with dark, crisp high-yield toner powder',
     rating: 4.9,
-    reviewsCount: 380,
+    reviewsCount: 980,
     startingPrice: 199,
     startingQty: 1,
-    turnaround: '15 Minutes While You Wait',
+    turnaround: '15-Minute Express',
     image: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&w=800&q=80',
     isCustomizable: false,
     badges: ['15-Min Express', 'Save 80%'],
@@ -387,17 +520,18 @@ export const PRODUCTS = [
   },
   {
     id: 'thesis-book-binding',
-    name: 'Project & Thesis Hardbound Book Binding',
-    category: 'it-services',
+    name: 'Thesis & Project Hardbound Binding',
+    category: 'computer-services',
+    subcategory: 'University Hardbound Thesis Binding',
     tagline: 'University compliant velvet & rexine hard binding with golden embossing',
     rating: 4.9,
-    reviewsCount: 290,
+    reviewsCount: 810,
     startingPrice: 249,
     startingQty: 1,
     turnaround: 'Same Day Delivery',
     image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
     isCustomizable: false,
-    badges: ['University Standard', 'Golden Embossed'],
+    badges: ['Gold Embossed', 'University Grade'],
     features: [
       'Deep blue, black, maroon, and green rexine / velvet cover options',
       'Hot foil gold lettering on front cover and spine',
@@ -411,35 +545,36 @@ export const PRODUCTS = [
   }
 ];
 
+export const PROMO_CODES = {
+  'SHREE10': { discount: 0.10, description: '10% OFF on all print orders' },
+  'FIRSTPRINT': { discount: 0.15, description: '15% OFF for new customers' },
+  'FESTIVE50': { discount: 50, fixed: true, description: 'Flat ₹50 OFF on orders above ₹499' }
+};
+
+export const CATEGORIES = DEPARTMENTS;
+
+
+
 export const TESTIMONIALS = [
   {
     name: 'Dr. Rajesh Sharma',
-    role: 'Managing Director, Apex Clinic',
-    city: 'Local Client',
-    comment: 'Ordered 500 gold foil visiting cards and prescription pads for our hospital. The print quality matches international standards! Delivered in just 2 days.',
+    role: 'Managing Director, Apex Healthcare',
+    comment: 'Ordered 500 gold foil visiting cards and prescription letterheads for our clinic. The print crispness matches international Vistaprint quality!',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80'
   },
   {
     name: 'Pooja Verma',
     role: 'Founder, Spice Garden Bistro',
-    city: 'Restaurant Owner',
-    comment: 'Shree Computers designed our restaurant menu cards and custom roll-up standee. The colors are so vibrant and water-resistant. Best printing service in town!',
+    comment: 'Shree Computers printed our water-resistant menu cards and roll-up standees. Delivered within 24 hours in pristine condition.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80'
   },
   {
     name: 'Amit Patel',
-    role: 'Tech Lead, Innovate Systems',
-    city: 'Corporate Client',
-    comment: 'We got our company laptop SSD upgrades and corporate ID cards done with Shree. Super prompt, professional, and saved us thousands compared to OEM charges.',
+    role: 'Operations Head, Innovate IT Systems',
+    comment: 'We got our company laptop SSD upgrades and corporate polo t-shirts done here. Super fast, honest pricing, and outstanding reliability.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
   }
 ];
-
-export const PROMO_CODES = {
-  'SHREE10': { discount: 0.10, description: '10% OFF on all print orders' },
-  'FIRSTPRINT': { discount: 0.15, description: '15% OFF for new customers' },
-  'FESTIVE50': { discount: 50, fixed: true, description: 'Flat ₹50 OFF on orders above ₹499' }
-};

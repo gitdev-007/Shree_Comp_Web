@@ -1,85 +1,85 @@
 import React from 'react';
 import { 
-  Printer, 
-  Sparkles, 
   ShieldCheck, 
-  Cpu, 
-  Clock, 
-  RotateCcw, 
-  MapPin, 
+  Printer, 
+  Truck, 
+  Users, 
   Star 
 } from 'lucide-react';
 import { TESTIMONIALS } from '../data/products';
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-14 bg-white border-t border-slate-200">
+    <section className="py-14 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Title */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
-            The Shree Guarantee
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-navy-950 font-display mt-2">
-            Why Over 10,000+ Businesses Trust Shree Computers & Printers
+        {/* Vistaprint Promise Header */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-[#002f6c] text-xs font-bold uppercase tracking-wider mb-2">
+            <ShieldCheck className="w-4 h-4 text-[#002f6c]" />
+            <span>The Vistaprint & Shree Promise</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-black text-navy-950 font-display">
+            We Stand by Everything We Print
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-2">
-            Combining world-class Japanese printing presses with trusted local IT service expertise.
+            If you are not 100% satisfied with your order, we will reprint it for free or refund your payment. No hassles.
           </p>
         </div>
 
-        {/* 4 Feature Pillars (Vistaprint Standard) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 hover:border-brand-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mx-auto shadow-sm">
-              <Printer className="w-6 h-6" />
-            </div>
-            <h3 className="text-base font-bold text-navy-950">Japanese 2400 DPI Presses</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Equipped with industrial Konica Minolta AccurioPress and Japanese offset presses for color accuracy and velvety smooth gradients.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 hover:border-brand-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mx-auto shadow-sm">
+        {/* 4 Pillars Strip (Classic Vistaprint Style) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 border-b border-slate-100 pb-12">
+          
+          <div className="flex flex-col items-center text-center space-y-2">
+            <div className="w-12 h-12 rounded-full bg-slate-100 text-[#002f6c] flex items-center justify-center mb-1">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">100% Satisfaction Guarantee</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              If your print does not meet your expectations, we will either reprint your entire batch free of cost or refund your money immediately.
+            <h3 className="text-sm font-bold text-slate-900">Absolutely Guaranteed</h3>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
+              Every card, flyer, banner, and t-shirt comes with our 100% satisfaction commitment.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 hover:border-brand-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-sm">
-              <Clock className="w-6 h-6" />
+          <div className="flex flex-col items-center text-center space-y-2">
+            <div className="w-12 h-12 rounded-full bg-slate-100 text-[#002f6c] flex items-center justify-center mb-1">
+              <Printer className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">24-Hour Express Dispatch</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              Tight deadlines? Our express printing queue processes visiting cards, banners, and standees with same-day local collection options.
+            <h3 className="text-sm font-bold text-slate-900">Japanese Precision Presses</h3>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
+              Printed on Konica Minolta AccurioPress for razor-sharp micro text and true-to-life CMYK colors.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3 hover:border-brand-300 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mx-auto shadow-sm">
-              <Cpu className="w-6 h-6" />
+          <div className="flex flex-col items-center text-center space-y-2">
+            <div className="w-12 h-12 rounded-full bg-slate-100 text-[#002f6c] flex items-center justify-center mb-1">
+              <Truck className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">Complete IT & Printing Hub</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
-              One place for all corporate needs: From business cards to laptop chip-level repair, toner cartridge refilling, and thesis book binding.
+            <h3 className="text-sm font-bold text-slate-900">Fast & Free Delivery</h3>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
+              Free standard doorstep delivery on all orders over ₹999, plus 24-hour express options.
             </p>
           </div>
+
+          <div className="flex flex-col items-center text-center space-y-2">
+            <div className="w-12 h-12 rounded-full bg-slate-100 text-[#002f6c] flex items-center justify-center mb-1">
+              <Users className="w-6 h-6" />
+            </div>
+            <h3 className="text-sm font-bold text-slate-900">Local Workshop & IT Desk</h3>
+            <p className="text-xs text-slate-500 leading-relaxed max-w-xs">
+              Walk into our workshop for in-person proofing, laptop motherboard repair, and express toner refills.
+            </p>
+          </div>
+
         </div>
 
-        {/* Customer Testimonials Carousel/Grid */}
-        <div className="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200">
+        {/* Customer Reviews Section */}
+        <div className="bg-[#f8f9fa] rounded-3xl p-6 sm:p-10 border border-slate-200">
           <div className="text-center mb-8">
             <h3 className="text-xl sm:text-2xl font-black text-navy-950 font-display">
-              Real Stories from Local Business Leaders
+              Loved by 10,000+ Business Owners Across Maharashtra
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              Read how Shree Computers & Printers helps brands look extraordinary
+              Read verified customer feedback on our print quality and technical service speed
             </p>
           </div>
 
